@@ -1,0 +1,29 @@
+.search-div {
+  position: relative;
+}
+
+.search-input {
+  height: 3.2rem;
+  width: 38.1rem;
+  background: var(--primarybg);
+  border: none;
+  font-size: 2.4rem;
+  font-weight: 200;
+  padding: 1rem 0;
+  padding-left: calc(3.2rem + 1rem);
+  outline: none;
+  color: var(--primarycolor);
+}
+
+.search-btn {
+  position: absolute;
+  left: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.search-btn:hover {
+  transform: scale(1.2);
+}

@@ -1,0 +1,85 @@
+.signin-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.signin-form-wrapper {
+  /* border: 2px solid white; */
+  position: relative;
+  height: 500px;
+  width: 500px;
+  transform-style: preserve-3d;
+  transition: 0.5s ease;
+}
+
+.signin-form {
+  padding: 3.2rem;
+  background: var(--secondarybg);
+  border-radius: 2rem;
+  box-shadow: 2px 3px 15px var(--secondarycolor);
+}
+
+.login-form-parent,
+.signup-form-parent {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.rotate-parent {
+  transform: rotateY(180deg);
+}
+
+.login-form-parent {
+  transform: rotateY(180deg);
+}
+
+.form-h1 {
+  font-weight: 300;
+  margin-bottom: 4rem;
+}
+
+.form-div {
+  margin: 2.4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-error-h5 {
+  position: absolute;
+  right: 5rem;
+  top: 10rem;
+  transition: 0.5s ease;
+}
+
+.show-error {
+  top: 1rem;
+}
+
+.form-btn {
+  margin-top: 4rem;
+  margin-bottom: 2.4rem;
+}
+
+.form-blurb {
+  text-align: center;
+  font-weight: 300;
+}
+
+.form-link {
+  cursor: pointer;
+  margin-left: 1rem;
+  transition: 0.2s ease;
+}
+
+.form-link:hover {
+  opacity: 75%;
+}

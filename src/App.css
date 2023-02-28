@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --red: #fc4747;
+  --navyblue: #161d2f;
+  --white: #ffffff;
+  --black: #10141e;
+  --lightblue: #5a698f;
+  --maintFont: "Outfit", sans-serif;
+}
+
+.app[data-theme="dark"] {
+  --primarybg: var(--black);
+  --primarycolor: var(--white);
+  --secondarycolor: var(--lightblue);
+  --secondarybg: var(--navyblue);
+}
+
+.app[data-theme="light"] {
+  --primarycolor: var(--navyblue);
+  --primarybg: var(--white);
+  --secondarybg: var(--lightblue);
+  --secondarycolor: var(--black);
+}
+
+.app {
+  background: var(--primarybg);
+  /* height: 210rem; */
+}
+
+.app-container {
+  background: var(--primarybg);
+  color: var(--primarycolor);
+  font-family: var(--maintFont);
+  max-width: 144rem;
+  margin: 0 auto;
+  /* border: 2px dotted blue; */
+  min-height: 100vh;
+  /* overflow: auto; */
+}
+
+body {
+  background: var(--primarybg);
+}
+
+.heading-lg {
+  font-size: 3.2rem;
+}
+
+.heading-md {
+  font-size: 2.4rem;
+}
+
+.heading-weight {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.heading-sm {
+  font-size: 1.8rem;
+}
+
+.blurb {
+  font-size: 1.5rem;
+}
+
+.small-blurb {
+  font-size: 1.3rem;
+}
+
+.form-input {
+  border: none;
+  border-bottom: 1px solid var(--lightblue);
+  color: var(--white);
+  outline: none;
+  width: 100%;
+  background: transparent;
+  padding: 1rem;
+  /* height: 3.7rem; */
+  font-size: 1.5rem;
+}
+
+.form-input:focus {
+  border-bottom: 3px solid var(--lightblue);
+}
+
+.form-error {
+  border-bottom: 2px solid var(--red);
+}
+
+.btn {
+  width: 33.6rem;
+  height: 4.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--red);
+  color: var(--white);
+  transition: 0.3s ease;
+  border: none;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.btn:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+.red {
+  color: var(--red);
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.thin {
+  font-weight: 100;
+}
