@@ -42,6 +42,14 @@
   transform: rotate(10deg) translateX(-0.5rem);
 }
 
+.icon-item:hover svg path {
+  fill: var(--red);
+}
+
+.highlight svg path {
+  fill: var(--white);
+}
+
 .avatar-img-div {
   height: 4rem;
   width: 4rem;

@@ -24,7 +24,7 @@ export const AppProvider = ({children})=>{
                 fetch("data.json")
                 .then(res=>res.json())
                 .then(res=>{
-                    console.log("Res",res)
+                    // console.log("Res",res)
                     setData(res);
 
                     setTrendingData(res.slice(0,5));
@@ -36,7 +36,7 @@ export const AppProvider = ({children})=>{
             const restoreData=()=>{
                 let temp = data;
                 setTrendingData(temp.slice(0,5));
-                setClientData(temp.slice(5,res.length-1));
+                setClientData(temp.slice(5,data.length-1));
                 setResultsTitle("Recommended for you")
 
             }
@@ -56,6 +56,29 @@ export const AppProvider = ({children})=>{
                     setClientData(shows)
                     setResultsTitle("Tv Shows")
 
+            }
+
+
+            const filterTitles=(title)=>{
+                if(title == ""){
+                    restoreData();
+                    return;
+                }
+                console.log(title);
+                let temp = data;
+                let matches = [];
+
+                temp.forEach(movie=>{
+                    let newTitle = movie.title.split("").splice(0,title.length)
+                    newTitle = newTitle.join("").toLowerCase();
+                    // console.log(newTitle)
+                    if(newTitle == title){
+                        matches.push(movie)
+                    }
+                })
+                setTrendingData([]);
+                setResultsTitle(`Your results (${matches.length})`)
+                setClientData(matches)
             }
 
             const bookmarkItem=(item)=>{
@@ -105,6 +128,7 @@ export const AppProvider = ({children})=>{
                 restoreData,
                 getBookmarks,
                 removeItem,
+                filterTitles,
 
             }
 

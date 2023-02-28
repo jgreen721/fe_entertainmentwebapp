@@ -9,7 +9,7 @@ import "./Recommended.css"
 const Recommended = () => {
   const {clientData,resultsTitle} = useAppContext()
 
-  console.log("data",clientData);
+  // console.log("data",clientData);
   return (
     <div className="recommended-parent">
       <div className="recommended-content-wrapper">
