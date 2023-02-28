@@ -7,7 +7,7 @@ import "./Recommended.css"
 
 
 const Recommended = () => {
-  const {clientData,resultsTitle} = useAppContext()
+  const {clientData,resultsTitle,clientShows} = useAppContext()
 
   // console.log("data",clientData);
   return (
@@ -19,6 +19,13 @@ const Recommended = () => {
          <RecommendedItem item={r} key={r.title} delay={idx * .25}/>
        ))}
      </ul>
+     {!clientData.length && <h2 className="no-matches">Sorry, doesn't look like we have what your looking for! 😖 </h2>}
+     {clientShows.title && <><h1 className="heading-lg recommended-h1"> {clientShows.title} </h1>
+     <ul className="recommended-grid">
+       {clientShows.data.map((r,idx)=>(
+         <RecommendedItem item={r} key={r.title} delay={idx * .25}/>
+       ))}
+     </ul></>}
      </div>
       </div>
   )

@@ -5,6 +5,7 @@
   /* height: 100%;
   width: 100%; */
   background: var(--primarybg);
+  margin-top: 3.5rem;
 }
 
 .recommended-content-wrapper {

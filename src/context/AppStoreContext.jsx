@@ -11,11 +11,12 @@ import { AppContext } from "./context_args";
 export const AppProvider = ({children})=>{
             const [currUser,setCurrUser] = useState({});
             const [auth, setAuth] = useState(true)
-            const [restore,setRestore] = useState(false)
             const [data,setData] = useState([]);
             const [trendingData,setTrendingData] = useState([]);
             const [clientData,setClientData] = useState([]);
+            const [clientShows, setClientShows] = useState({});
             const [bookMarkData,setBookMarkData] = useState(JSON.parse(localStorage.getItem("bookmarked")) || []);
+
             const [resultsTitle,setResultsTitle] = useState("Recommended for you")
             
 
@@ -24,7 +25,7 @@ export const AppProvider = ({children})=>{
                 fetch("data.json")
                 .then(res=>res.json())
                 .then(res=>{
-                    // console.log("Res",res)
+                     console.log("Res",res)
                     setData(res);
 
                     setTrendingData(res.slice(0,5));
@@ -54,6 +55,7 @@ export const AppProvider = ({children})=>{
                     console.log('getTv fired')
                     let shows = data.filter(d=>d.category == "TV Series");
                     setClientData(shows)
+                    setTrendingData([])
                     setResultsTitle("Tv Shows")
 
             }
@@ -64,6 +66,7 @@ export const AppProvider = ({children})=>{
                     restoreData();
                     return;
                 }
+                title = title.toLowerCase();
                 console.log(title);
                 let temp = data;
                 let matches = [];
@@ -98,9 +101,12 @@ export const AppProvider = ({children})=>{
 
             const getBookmarks=()=>{
                 console.log("get book marks!")
-                setClientData(bookMarkData);
+                let movies = bookMarkData.filter(t=>t.category == "Movie")
+                let tvShows = bookMarkData.filter(t=>t.category != "Movie")
+                setClientData(movies);
                 setTrendingData([]);
                 setResultsTitle("Bookmarked Movies");
+                setClientShows({title:"Bookmarked Shows",data:tvShows})
 
             }
 
@@ -121,6 +127,7 @@ export const AppProvider = ({children})=>{
                 trendingData,
                 clientData,
                 resultsTitle,
+                clientShows,
 
                 bookmarkItem,
                 getMovies,

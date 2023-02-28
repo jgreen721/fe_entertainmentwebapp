@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {movieCategory,bookmarkEmpty} from "../../../../../const";
+import {movieCategory, tvCategory,bookmarkEmpty} from "../../../../../const";
 // import { useAppContext } from '../../../../../context/AppStoreContext';
 import { useAppContext } from '../../../../../context/context_args';
 
@@ -22,10 +22,18 @@ const RecommendedItem = ({item,delay}) => {
         <div className="content-card rec-card">
             <div className="content-row">
               <h5 className="small-blurb content-info">{item.year}</h5>
+              {item.category == "Movie" ?
+
               <div className="middle-content-col">
                 <img className="film-img" src={movieCategory} alt="film-img" />
                 <p className="small-blurb content-info">Movie</p>
               </div>
+              :
+              <div className="middle-content-col">
+              <img className="film-img" src={tvCategory} alt="film-img" />
+              <p className="small-blurb content-info">TV Series</p>
+            </div>
+}
               <p className="small-blurb content-info">{item.rating}</p>
             </div>
             <h3 className="heading-sm rec-movie-title">{item.title}</h3>
