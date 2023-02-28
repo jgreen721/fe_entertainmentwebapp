@@ -81,6 +81,7 @@
 
   .nav-logo {
     margin-bottom: 0;
+    margin-right: 2rem;
   }
 
   .nav-icons-column {
@@ -93,5 +94,18 @@
 
   .icon-item:hover {
     transform: rotate(-3deg) translateY(-0.5rem);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .nav {
+    padding: 0rem;
+  }
+
+  .nav-flex-wrapper {
+    padding: 1rem;
+  }
+  .nav-icons-column {
+    width: 75%;
   }
 }

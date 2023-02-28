@@ -35,7 +35,7 @@
   }
   .nav-wrapper {
     width: 100%;
-    height: calc(3.2rem + 2.3rem + 7.2rem);
+    height: calc(2.3rem + 7.2rem);
     /* border: 3px solid red; */
     padding: 0rem;
   }
@@ -43,7 +43,7 @@
   .main-section-wrapper {
     /* margin-top: 3.3rem; */
     /* margin-left: 2.5rem; */
-    top: calc(3.2rem + 2.3rem + 7.2rem);
+    top: calc(2.3rem + 7.2rem);
 
     left: 0;
     width: 100%;

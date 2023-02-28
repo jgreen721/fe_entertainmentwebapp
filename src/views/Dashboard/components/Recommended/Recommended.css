@@ -187,4 +187,15 @@
     gap: 1.5rem 1.5rem;
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .recommended-item {
+    height: 15.4rem;
+    width: 16.4rem;
+    /* border: 1px solid white; */
+    position: relative;
+  }
+
+  .recommended-img-div {
+    height: 11rem;
+  }
 }
