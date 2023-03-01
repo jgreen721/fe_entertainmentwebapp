@@ -1,10 +1,12 @@
 import React, {useRef} from 'react'
+import { useAppContext } from '../../../context/context_args';
 
 const SignUp = ({toggleModal}) => {
     // const [username,setUsername] = useState("")
     // const [password,setPassword] = useState("")
     // const [password2,setPassword2] = useState("")
     const formRef = useRef();
+    const {demoAuth} = useAppContext();
 
 
     const handleSignUp=(e)=>{
@@ -28,6 +30,7 @@ const SignUp = ({toggleModal}) => {
 
           if(isError)return;
           console.log("Success condition!")
+          demoAuth();
 
     }
 
@@ -62,6 +65,9 @@ const SignUp = ({toggleModal}) => {
         </div>
         <button type="submit" className="btn form-btn"> Create an account</button>
         <h5 className="form-blurb blurb">Already have an account? <span onClick={toggleModal} className="form-link red bold">Login</span></h5>
+        <div className="small-caption-div">
+          <small onDoubleClick={demoAuth} className="small-caption">(Dbl Click for DEMO entry)</small>
+        </div>
     </form>
     </div>
   )

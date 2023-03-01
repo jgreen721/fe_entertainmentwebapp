@@ -1,7 +1,10 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
+import { useAppContext } from '../../../context/context_args';
 
 const Login = ({toggleModal}) => {
   const formRef = useRef();
+  const {demoAuth} = useAppContext();
+  const [isError, setIsError] = useState(false)
 
 
 
@@ -10,8 +13,16 @@ const Login = ({toggleModal}) => {
     formRef.current.querySelectorAll(".form-div").forEach((formDiv,idx)=>{
       if(formDiv.querySelector(".form-input").value == ""){
         formDiv.querySelector(".form-error-h5").classList.add("show-error");
+        setIsError(true)
       }
     })
+
+    if(isError){
+      setIsError(false)
+      return;
+    }
+    console.log("Success condition!")
+    demoAuth();
 
   }
   return (
@@ -30,6 +41,9 @@ const Login = ({toggleModal}) => {
         </div>
         <button type="submit" className="btn form-btn"> Login to your acount</button>
         <h5 className="blurb form-blurb">Dont have an account? <span onClick={toggleModal} className="red form-link bold">Sign Up</span></h5>
+        <div className="small-caption-div">
+          <small onDoubleClick={demoAuth} className="small-caption">(Dbl Click for DEMO entry)</small>
+        </div>
     </form>
     </div>
   )

@@ -83,3 +83,13 @@
 .form-link:hover {
   opacity: 75%;
 }
+
+.small-caption-div {
+  width: 100%;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.small-caption {
+  cursor: pointer;
+}

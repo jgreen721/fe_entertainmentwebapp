@@ -6,7 +6,7 @@ import NavIcon from './NavIcon';
 
 import "./Nav.css"
 const Nav = () => {
-  const {restoreData, getMovies,getTv,getBookmarks} = useAppContext()
+  const {restoreData, getMovies,getTv,getBookmarks,logout} = useAppContext()
   const linksRef = useRef();
 
   var links=[
@@ -26,7 +26,10 @@ const Nav = () => {
     <nav className="nav">
       <div className="nav-flex-wrapper">
       <div className="nav-icons-column">
-        <img className="nav-logo" src={logo} alt="" />
+        <div className="nav-logo-div">
+        <img onClick={logout} className="nav-logo" src={logo} alt="" />
+
+        </div>
         <ul ref={linksRef} className="icon-list">
           {links.map(l=>(
             <NavIcon key={l.id} id={l.id} icon={l.icon} action={l.action} handleLinkClick={handleLinkClick}/>

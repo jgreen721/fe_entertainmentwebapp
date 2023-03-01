@@ -10,7 +10,7 @@ import { AppContext } from "./context_args";
 
 export const AppProvider = ({children})=>{
             const [currUser,setCurrUser] = useState({});
-            const [auth, setAuth] = useState(true)
+            const [auth, setAuth] = useState(false)
             const [data,setData] = useState([]);
             const [trendingData,setTrendingData] = useState([]);
             const [clientData,setClientData] = useState([]);
@@ -32,6 +32,15 @@ export const AppProvider = ({children})=>{
                     setClientData(res.slice(5,res.length-1));
                 })
             },[])
+
+
+            const demoAuth=()=>{
+                setAuth(true);
+            }
+
+            const logout=()=>{
+                setAuth(false);
+            }
 
 
             const restoreData=()=>{
@@ -128,6 +137,8 @@ export const AppProvider = ({children})=>{
                 clientData,
                 resultsTitle,
                 clientShows,
+                demoAuth,
+                logout,
 
                 bookmarkItem,
                 getMovies,

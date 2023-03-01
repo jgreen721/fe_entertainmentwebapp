@@ -25,8 +25,24 @@
   align-items: center;
 }
 
-.nav-logo {
+.nav-logo-div {
   margin-bottom: 7.5rem;
+  cursor: pointer;
+  position: relative;
+}
+
+/* .nav-logo-div {
+  position: relative;
+  border: 3px solid green;
+} */
+
+.nav-logo-div:hover::after {
+  content: "Logout";
+  color: var(--primarycolor);
+  position: absolute;
+  z-index: 5;
+  top: 1rem;
+  left: -1rem;
 }
 
 .icon-list {
@@ -87,7 +103,7 @@
     padding: 0 2rem;
   }
 
-  .nav-logo {
+  .nav-logo-div {
     margin-bottom: 0;
     margin-right: 2rem;
   }
