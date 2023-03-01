@@ -3,8 +3,10 @@ import { logo, tvSeriesIcon, moviesIcon, bookmark,homeIcon,avatar } from '../../
 // import { useAppContext } from '../../../../context/AppStoreContext'
 import { useAppContext } from '../../../../context/context_args';
 import NavIcon from './NavIcon';
+import NavLogo from './NavLogo';
 
 import "./Nav.css"
+
 const Nav = () => {
   const {restoreData, getMovies,getTv,getBookmarks,logout} = useAppContext()
   const linksRef = useRef();
@@ -37,6 +39,7 @@ const Nav = () => {
        
         </ul>
       </div>
+      <NavLogo/>
     <div className="avatar-img-div">
       <img className="avatar-img" src={avatar} alt="" />
     </div>

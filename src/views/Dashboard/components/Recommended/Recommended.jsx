@@ -20,12 +20,12 @@ const Recommended = () => {
        ))}
      </ul>
      {!clientData.length && <h2 className="no-matches">Sorry, doesn't look like we have what your looking for! 😖 </h2>}
-     {clientShows.title && <><h1 className="heading-lg recommended-h1"> {clientShows.title} </h1>
+     {clientShows.title && <div className="tvshows-grid"><h1 className="heading-lg recommended-h1"> {clientShows.title} </h1>
      <ul className="recommended-grid">
        {clientShows.data.map((r,idx)=>(
          <RecommendedItem item={r} key={r.title} delay={idx * .25}/>
        ))}
-     </ul></>}
+     </ul></div>}
      </div>
       </div>
   )

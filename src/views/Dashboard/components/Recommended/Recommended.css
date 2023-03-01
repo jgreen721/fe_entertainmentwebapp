@@ -25,6 +25,10 @@
   overflow: auto;
 }
 
+.tvshows-grid {
+  margin-top: 3rem;
+}
+
 .recommended-item {
   height: 22.6rem;
   width: 28rem;
