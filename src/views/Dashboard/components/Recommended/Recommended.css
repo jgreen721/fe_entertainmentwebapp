@@ -69,6 +69,7 @@
 
 .recommended-item:hover .recommended-img-div {
   filter: hue-rotate(150deg);
+  transform: scale(1.03) translateX(0.3rem);
 }
 
 .rec-movie-title {

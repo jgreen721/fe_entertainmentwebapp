@@ -1,9 +1,9 @@
-import React, {useState, useRef} from 'react'
+import React, { useRef} from 'react'
 import {Login, SignUp} from "./components"
 import "./SignIn.css"
+import { logo } from '../../const'
 
 const SignIn = () => {
-    const [showLogin, setShowLogin] = useState(true)
     const formRef = useRef();
 
 
@@ -12,6 +12,9 @@ const SignIn = () => {
     }
   return (
     <div className="signin-container">
+<div className="signin-logo-container">
+  <img className="signin-logo" src={logo} alt="" />
+</div>
       <div ref={formRef} className="signin-form-wrapper">
         {/* {showLogin ? <Login setShowLogin={setShowLogin}/> : <SignUp/>} */}
         <SignUp toggleModal={toggleModal}/>

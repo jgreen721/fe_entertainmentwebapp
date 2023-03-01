@@ -2,7 +2,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+}
+
+.signin-logo-container {
+  margin-bottom: 6rem;
+}
+
+.signin-logo {
+  animation: grow 1s forwards;
+  transform: scale(0);
+}
+
+@keyframes grow {
+  50% {
+    transform: scale(1.8, 1.3);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 3px 3px 15px var(--primarycolor), 3px 3px 35px var(--primarybg),
+      3px 3px 45px var(--primarycolor), 3px 3px 55px var(--secondarycolor);
+  }
 }
 
 .signin-form-wrapper {
@@ -92,4 +115,15 @@
 
 .small-caption {
   cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.small-caption:hover {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 850px) {
+  .signin-form {
+    padding: 2.4rem;
+  }
 }

@@ -30,8 +30,16 @@
   cursor: pointer;
 }
 
+.trending-img {
+  transition: 0.3s ease;
+}
+
 .trending-item:hover {
   box-shadow: 1px 1px 2px var(--secondarycolor);
+}
+
+.trending-item:hover .trending-img {
+  transform: scale(1.1) translateY(1rem);
 }
 
 .trending-item:hover::after {
