@@ -21,9 +21,9 @@ const Recommended = () => {
      </ul>
 
      {resultsTitle == "Your results (0)" && <h2 className="no-matches">Sorry, doesn't look like we have what you're looking for! 😖 </h2>}
-     {(!clientData.length && !clientShows.data.length && resultsTitle == "Bookmarked Movies") && <h2 className="no-matches">Ooops, doesn't look like you've saved any favorites...yet!😎 </h2>}
+     {(!clientData.length && clientShows?.data &&  !clientShows?.data.length && resultsTitle == "Bookmarked Movies") && <h2 className="no-matches">Ooops, doesn't look like you've saved any favorites...yet!😎 </h2>}
 
-      {clientShows.data.length > 0 &&
+      {clientShows?.data &&clientShows?.data.length > 0 &&
       <div className="tvshows-grid">
         <h1 className="heading-lg recommended-h1"> {clientShows.title} </h1> 
      <ul className="recommended-grid">
